@@ -10,6 +10,7 @@
       <tr>
         <td><%= sign_up.name %></td>
         <td><%= sign_up.email %></td>
+        <td><%= link_to "Edit", edit_sign_up_path(sign_up) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -34,13 +34,21 @@
 
 <div style='text-align: center'>
 <p class='lead'>Interested? Sign up for our private beta.</p>
-<form method='POST'>
+
+<% if flash[:error].present? %>
+  <div class='alert alert-error'>
+    <h4>Some errors prevented me from submitting your form:</h4>
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
+<%= form_for(@sign_up) do |f| %>
   <div>
-    <input type='text' name='name' placeholder="Joe Catlover" />
-    <input type='text' name='email' placeholder="catfan55@hotmail.com" />
+    <%= f.text_field :name, placeholder: "Joe Catlover" %>
+    <%= f.text_field :email, placeholder: "catfan55@hotmail.com" %>
   </div>
   <div>
-    <input type='submit' class='btn btn-primary'>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
-</form>
+<% end %>
 </div>

@@ -1,0 +1,13 @@
+<%= form_for(@sign_up, class: 'bootstrap-form') do |f| %>
+  <div class='control-group'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class='control-group'>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  
+  <%= f.submit %>
+<% end %>
